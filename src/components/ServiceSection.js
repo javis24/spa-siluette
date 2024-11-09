@@ -7,10 +7,10 @@ const ServiceSection = () => {
   // Datos de cada servicio
   const services = [
     { id: 'facials', name: 'Drenaje Linfático', image: '/img/spa_menu_1.png', price: '$40 - $80', description: 'Descripción del Drenaje Linfático...' },
-    { id: 'mesotherapy', name: 'Mesoterapia', image: '/img/spa_menu_2.png', price: '$50 - $90', description: 'Descripción de Mesoterapia...' },
-    { id: 'lipolaser', name: 'Ultra Lipolaser', image: '/img/spa_menu_3.png', price: '$60 - $100', description: 'Descripción de Ultra Lipolaser...' },
-    { id: 'ultracavitation', name: 'Ultracavitación', image: '/img/spa_menu_4.png', price: '$70 - $110', description: 'Descripción de Ultracavitación...' },
-    { id: 'radiofrequency', name: 'Ultra Radiofreciencia', image: '/img/spa_menu_5.png', price: '$80 - $120', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'mesotherapy', name: 'Mesoterapia', image: '/img/spa_menu_1.png', price: '$50 - $90', description: 'Descripción de Mesoterapia...' },
+    { id: 'lipolaser', name: 'Ultra Lipolaser', image: '/img/spa_menu_1.png', price: '$60 - $100', description: 'Descripción de Ultra Lipolaser...' },
+    { id: 'ultracavitation', name: 'Ultracavitación', image: '/img/spa_menu_1.png', price: '$70 - $110', description: 'Descripción de Ultracavitación...' },
+    { id: 'radiofrequency', name: 'Ultra Radiofreciencia', image: '/img/spa_menu_1.png', price: '$80 - $120', description: 'Descripción de Ultra Radiofreciencia...' },
     // Agrega más servicios según sea necesario
   ];
 
