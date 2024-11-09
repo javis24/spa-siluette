@@ -16,9 +16,6 @@ const Header = () => {
         <i className="fab fa-instagram"></i>
       </div>
     </div>
-
-
-
    {/* Barra principal con logo, título y botón */}
    <div className="main-bar flex flex-col md:flex-row justify-between items-center h-auto md:h-24 bg-white p-4">
     <div className="logo mb-2 md:mb-0">
@@ -37,8 +34,8 @@ const Header = () => {
   <nav className="navbar flex justify-center bg-[#cbaa3d] p-2 rounded-lg shadow-md">
     <ul className="navbar-list flex flex-col md:flex-row md:space-x-4 text-white text-lg font-semibold">
       <li className="mb-2 md:mb-0"><a href="#home">Home</a></li>
-      <li className="mb-2 md:mb-0"><a href="#about">Cursos</a></li>
-      <li className="mb-2 md:mb-0"><a href="#services">Servicios</a></li>
+      <li className="mb-2 md:mb-0"><a href="#cursos">Cursos</a></li>
+      <li className="mb-2 md:mb-0"><a href="#servicios">Servicios</a></li>
       <li><a href="#contact">Regístrate</a></li>
     </ul>
   </nav>

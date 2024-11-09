@@ -18,6 +18,7 @@ const ServiceSection = () => {
   const currentService = services.find(service => service.id === selectedService);
 
   return (
+    <section id="servicios" className="py-10">
     <div className="service-section grid grid-cols-1 lg:grid-cols-3 p-5 gap-5">
       {/* Menú lateral */}
       <div className="sidebar-menu grid gap-3 grid-cols-2 lg:grid-cols-2 lg:col-span-1">
@@ -47,6 +48,7 @@ const ServiceSection = () => {
         )}
       </div>
     </div>
+    </section>
   );
 };
 
