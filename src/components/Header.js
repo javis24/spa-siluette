@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from 'next/link';
 
 
 const Header = () => {
@@ -19,7 +21,7 @@ const Header = () => {
    {/* Barra principal con logo, título y botón */}
    <div className="main-bar flex flex-col md:flex-row justify-between items-center h-auto md:h-24 bg-white p-4">
     <div className="logo mb-2 md:mb-0">
-
+    <Image src="/img/silluet_logo.png" alt="Logo" width={100} height={100} />
     </div>
     <div className="logo text-center md:text-left text-[#cbaa3d] text-xl font-great-vibes italic">
       <p>Siluette Plus JC</p>
@@ -36,7 +38,7 @@ const Header = () => {
       <li className="mb-2 md:mb-0"><a href="#home">Home</a></li>
       <li className="mb-2 md:mb-0"><a href="#cursos">Cursos</a></li>
       <li className="mb-2 md:mb-0"><a href="#servicios">Servicios</a></li>
-      <li><a href="#contact">Regístrate</a></li>
+      <li><Link href="/login">Regístrate</Link></li>
     </ul>
   </nav>
 </header>
