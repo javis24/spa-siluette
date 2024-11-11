@@ -4,6 +4,7 @@ import Banner from '../components/Banner';
 import ServiceSection from '../components/ServiceSection';
 import AppointmentContainer from '../components/AppointmentContainer';
 import '../app/globals.css';
+import CourseOffer from '@/components/CourseOffer';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Banner />
       <ServiceSection />
       <AppointmentContainer />
+      <CourseOffer />
     </>
   );
 }
