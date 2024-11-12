@@ -6,16 +6,21 @@ const ServiceSection = () => {
 
   // Datos de cada servicio
   const services = [
-    { id: 'facials', name: 'Drenaje Linfático', image: '/img/spa_menu_1.png', price: '$40 - $80', description: 'Descripción del Drenaje Linfático...' },
-    { id: 'mesotherapy', name: 'Mesoterapia', image: '/img/spa_menu_1.png', price: '$50 - $90', description: 'Descripción de Mesoterapia...' },
-    { id: 'lipolaser', name: 'Ultra Lipolaser', image: '/img/spa_menu_1.png', price: '$60 - $100', description: 'Descripción de Ultra Lipolaser...' },
-    { id: 'ultracavitation', name: 'Ultracavitación', image: '/img/spa_menu_1.png', price: '$70 - $110', description: 'Descripción de Ultracavitación...' },
-    { id: 'radiofrequency', name: 'Ultra Radiofreciencia', image: '/img/spa_menu_1.png', price: '$80 - $120', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'facials', name: 'Drenaje Linfático', image: '/img/drenaje.png', description: 'Drenaje linfático es una técnica que mediante suaves y repetidas maniobras con duración de 20 a 30min, siempre superficiales sobre la piel, logra acelerar e incluso redirigir la circulación linfática superficial. Su aplicación acelera la reabsorción del edema. Es un método que tiene como finalidad drenar líquidos subcutaneos hacia los ganglios, es excelente para personas muy sedentarias y también para pacientes con cirugías estéticas recientes.' },
+    { id: 'mesotherapy', name: 'Mesoterapia', image: '/img/spa_menu_1.png', description: 'Descripción de Mesoterapia...' },
+    { id: 'lipolaser', name: 'Ultra Lipolaser', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Lipolaser...' },
+    { id: 'ultracavitation', name: 'Ultracavitación', image: '/img/spa_menu_1.png', description: 'Descripción de Ultracavitación...' },
+    { id: 'radiofrequency', name: 'Ultra Radiofreciencia', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
     // Agrega más servicios según sea necesario
   ];
 
   // Encuentra el servicio seleccionado en el arreglo
   const currentService = services.find(service => service.id === selectedService);
+   // Número de WhatsApp y mensaje de interés
+   const whatsappNumber = "528713330566"; // Reemplaza XXXXXXXX por el número de teléfono de tu cliente
+   const whatsappMessage = "Me interesa una cita";
+ 
+
 
   return (
     <section id="servicios" className="py-10">
@@ -40,9 +45,17 @@ const ServiceSection = () => {
             <img src={currentService.image} alt={currentService.name} className="content-image w-full lg:w-[300px] rounded mb-4 lg:mb-0" />
             <div className="content-text max-w-lg">
               <h2 className="text-2xl font-semibold">{currentService.name}</h2>
-              <p className="price text-[#ff4d8b] text-lg">{currentService.price}</p>
+             
               <p>{currentService.description}</p>
-              <button className="more-btn bg-[#ff4d8b] text-white px-4 py-2 rounded mt-2">More</button>
+              <br />
+              <a
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="more-btn bg-[#ff4d8b] text-white px-4 py-2 rounded mt-2"
+                >
+                  Agendar Cita
+                </a>
             </div>
           </div>
         )}
