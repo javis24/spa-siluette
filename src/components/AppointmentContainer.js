@@ -1,6 +1,6 @@
 const AppointmentContainer = () => {
     return (
-      <section id="cursos" className="py-10">
+      <section id="cursos" className="py-20">
           <h2 className="text-3xl font-bold text-center">Nuestros Cursos</h2>
                 <div className="appointment-container grid grid-cols-1 lg:grid-cols-2 max-w-5xl mx-auto my-5 border border-gray-300 rounded-lg overflow-hidden gap-5">
                 {/* Formulario de Cita */}
@@ -19,7 +19,8 @@ const AppointmentContainer = () => {
                   </form>
                 </div>    
             {/* Imagen de Horario */}
-            <div className="open-hours bg-cover bg-center text-gray-900 p-10 text-center" style={{ backgroundImage: "url('/img/cursos.jpeg')" }}>
+            <div
+            className="open-hours bg-contain bg-center text-gray-900 p-10 text-center"  style={{ backgroundImage: "url('/img/cursos.jpeg')", backgroundRepeat: "no-repeat" }} >
               {/* Puedes agregar contenido dentro de esta sección si es necesario */}
             </div>
           </div>

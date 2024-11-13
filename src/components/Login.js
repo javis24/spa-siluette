@@ -1,16 +1,41 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';
 import '../app/globals.css';
-
+import { jwtDecode } from 'jwt-decode';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPopup, setShowPopup] = useState(false);
+  const [message, setMessage] = useState('');
+  const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica de autenticación
-    console.log("Email:", email, "Password:", password);
+
+    try {
+      const response = await axios.post('/api/auth', { email, password });
+      const { token } = response.data;
+
+      // Decodifica el token para obtener el rol
+      const decodedToken = jwtDecode(token);
+      const userRole = decodedToken.role;
+
+      // Guarda el token en el almacenamiento local
+      localStorage.setItem('token', token);
+      setMessage('Inicio de sesión exitoso');
+
+      // Redirige según el rol
+      if (userRole === 'admin') {
+        router.push('/dashboard'); // Redirige al dashboard si es admin
+      } else if (userRole === 'clientes') {
+        router.push('/perfil'); // Redirige al perfil del cliente si es cliente
+      }
+    } catch (error) {
+      setMessage('Error en el inicio de sesión');
+      console.error(error);
+    }
   };
 
   return (
@@ -50,6 +75,7 @@ const Login = () => {
         >
           Entrar
         </button>
+        {message && <p className="text-center text-red-500">{message}</p>}
         <div className="text-gray-700">
           ¿Te gustaría una sesión con SiluettePlusJC?{" "}
           <button
@@ -61,8 +87,8 @@ const Login = () => {
           </button>
         </div>
       </form>
-    {/* Popup del Formulario */}
-    {showPopup && (
+      {/* Popup del Formulario */}
+      {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
             <button
@@ -73,20 +99,19 @@ const Login = () => {
             </button>
             <h2 className="text-2xl font-bold mb-4 text-center">Inscríbete</h2>
             <div className="appointment-form bg-[#9b5ab7] text-white p-10">
-                  <h2 className="text-2xl mb-2">Inscribete  <span className="italic">a nuestros cursos</span></h2>
-                  <form className="space-y-4">
-                    <label htmlFor="name">Nombre</label>
-                    <input type="text" id="name" name="name" className="w-full p-2 rounded text-black" required />
-                    <label htmlFor="email">Correo</label>
-                    <input type="email" id="email" name="email" className="w-full p-2 rounded text-black" required />
-                    <label htmlFor="phone">Teléfono</label>
-                    <input type="tel" id="phone" name="phone" className="w-full p-2 rounded text-black" required />
-                    <label htmlFor="message">Mensaje</label>
-                    <textarea id="message" name="message" rows="3" className="w-full p-2 rounded text-black" required></textarea>
-                    <button type="submit" className="bg-black text-white px-4 py-2 rounded">Enviar Whatsapp</button>
-                  </form>
-                </div>   
-          
+              <h2 className="text-2xl mb-2">Inscríbete <span className="italic">a nuestros cursos</span></h2>
+              <form className="space-y-4">
+                <label htmlFor="name">Nombre</label>
+                <input type="text" id="name" name="name" className="w-full p-2 rounded text-black" required />
+                <label htmlFor="email">Correo</label>
+                <input type="email" id="email" name="email" className="w-full p-2 rounded text-black" required />
+                <label htmlFor="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" className="w-full p-2 rounded text-black" required />
+                <label htmlFor="message">Mensaje</label>
+                <textarea id="message" name="message" rows="3" className="w-full p-2 rounded text-black" required></textarea>
+                <button type="submit" className="bg-black text-white px-4 py-2 rounded">Enviar Whatsapp</button>
+              </form>
+            </div>   
           </div>
         </div>
       )}

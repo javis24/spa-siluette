@@ -10,13 +10,24 @@ const ServiceSection = () => {
     { id: 'mesotherapy', name: 'Mesoterapia', image: '/img/spa_menu_1.png', description: 'Descripción de Mesoterapia...' },
     { id: 'lipolaser', name: 'Ultra Lipolaser', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Lipolaser...' },
     { id: 'ultracavitation', name: 'Ultracavitación', image: '/img/spa_menu_1.png', description: 'Descripción de Ultracavitación...' },
-    { id: 'radiofrequency', name: 'Ultra Radiofreciencia', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'radiofrequency', name: 'Ultra Radiofrecuencia', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'vacuumPro', name: 'Vacuum Pro', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'gympasiva', name: 'Gym Pasiva', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'maderoterapia', name: 'Maderoterapia', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'desintoxicacion', name: 'Desintoxicación', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'peptonas', name: 'Peptonas', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'copasparagluteo', name: 'Copas para Glúteo', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'laseryag', name: 'Laser YAG', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'depilacionlaserdefinitiva', name: 'Depilacion Laser Definitiva', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'hollywoodpeel', name: 'Hollywood PEEL', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'hydrafacial', name: 'HydraFacial', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
+    { id: 'masajerelajante', name: 'Masaje Relajante', image: '/img/spa_menu_1.png', description: 'Descripción de Ultra Radiofreciencia...' },
     // Agrega más servicios según sea necesario
   ];
 
   // Encuentra el servicio seleccionado en el arreglo
   const currentService = services.find(service => service.id === selectedService);
-   // Número de WhatsApp y mensaje de interés
+   // Número de WhatsApp y mensaje de interésEllos dijeron: Cree en el Señor Jesucristo, y serás salvo, tú y tu casa. Hechos 16:31
    const whatsappNumber = "528713330566"; // Reemplaza XXXXXXXX por el número de teléfono de tu cliente
    const whatsappMessage = "Me interesa una cita";
  

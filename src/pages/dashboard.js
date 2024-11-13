@@ -17,10 +17,18 @@ const Dashboard = () => {
     // Llama a la API para obtener la lista de clientes
     fetch('/api/clients')
       .then((response) => response.json())
-      .then((data) => setClients(data))
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setClients(data);
+          setFilteredClients(data); // Inicializar filteredClients con todos los clientes
+        } else {
+          console.error("La respuesta de la API no es un array:", data);
+          setClients([]);
+        }
+      })
       .catch((error) => console.error('Error fetching clients:', error));
   }, []);
-
+  
   useEffect(() => {
     // Filtrar clientes según el término de búsqueda
     setFilteredClients(
@@ -77,19 +85,23 @@ const Dashboard = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full p-2 border rounded mb-4"
           />
-          <ul>
-            {filteredClients.map((client) => (
-              <li key={client.id} className="flex justify-between items-center border-b py-2">
-                <span>{client.name}</span>
-                <button
-                  onClick={() => handleNavigateToClientProfile(client.id)}
-                  className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700"
-                >
-                  Ver Perfil
-                </button>
-              </li>
-            ))}
-          </ul>
+          {filteredClients.length > 0 ? (
+            <ul className="max-h-48 overflow-y-auto">
+              {filteredClients.map((client) => (
+                <li key={client.id} className="flex justify-between items-center border-b py-2">
+                  <span>{client.name}</span>
+                  <button
+                    onClick={() => handleNavigateToClientProfile(client.id)}
+                    className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700"
+                  >
+                    Ver Perfil
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-500">No se encontraron clientes</p>
+          )}
         </div>
       ),
     },
@@ -115,7 +127,6 @@ const Dashboard = () => {
         </button>
       ),
     },
-
   ];
 
   return (
@@ -134,7 +145,7 @@ const Dashboard = () => {
           </div>
         </div>
       )}
-        {/* Popup de Agregar Cliente */}
+      {/* Popup de Agregar Cliente */}
       {isClientPopupOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded shadow-lg w-[80%] max-w-4xl relative">
@@ -148,7 +159,6 @@ const Dashboard = () => {
           </div>
         </div>
       )}
-
     </div>
   );
 };
