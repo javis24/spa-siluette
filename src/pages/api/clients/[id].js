@@ -1,6 +1,6 @@
 import Clients from '../../../models/ClientModel';
 import db from '../../../config/database';
-import { authenticateToken } from '../../../middleware/verifyToken';
+import { authenticateToken } from '../middleware/verifyToken';
 
 export default async function handler(req, res) {
   try {
