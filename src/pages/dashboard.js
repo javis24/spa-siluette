@@ -38,6 +38,11 @@ const Dashboard = () => {
     );
   }, [searchTerm, clients]);
 
+  const handleLogout = () => {
+    localStorage.removeItem('token'); // Elimina el token
+    router.push('/login'); // Redirige a la página de inicio de sesión
+  };
+
   const handleNavigateToUserList = () => {
     router.push('/usuarios'); // Navega al componente UserList
   };
@@ -131,7 +136,15 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Dashboard</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold">Dashboard</h1>
+        <button
+          onClick={handleLogout}
+          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
+        >
+          Cerrar Sesión
+        </button>
+      </div>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {cardsData.map((card, index) => (
           <Card key={index} title={card.title} content={card.content} />
