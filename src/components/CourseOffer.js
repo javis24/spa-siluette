@@ -9,7 +9,7 @@ const CourseOffer = () => {
         {/* Sección de imagen y botón */}
         <div className="flex flex-col items-center md:w-1/2">
           <Image 
-            src="/img/course_img.png" // Cambia la ruta de la imagen según tus archivos
+            src="/img/curso_img.png" // Cambia la ruta de la imagen según tus archivos
             alt="Curso"
             width={400}
             height={300}
@@ -23,13 +23,9 @@ const CourseOffer = () => {
         {/* Sección de descripción */}
         <div className="md:w-1/2 mt-4 md:mt-0 text-gray-700">
           <p className="text-lg">
-            Nuestros cursos están diseñados para ayudarte a mejorar tus habilidades y conocimientos en diferentes áreas. 
-            Ofrecemos una variedad de temas que se adaptan a tus intereses y necesidades. 
-            Ya sea que estés buscando avanzar en tu carrera o aprender algo nuevo, nuestros cursos te ofrecen el mejor contenido y recursos.
-          </p>
+          Bienvenidos a nuestros cursos online, Dónde aprenderás a proporcionar tratamientos 100% personalizados, las técnicas adecuadas para aplicar cada una de las tecnologías reductivas,  y de embellecimiento, también aprenderás todas las terapias más vendidas y eficaces para que tus pacientes o clientes quedé. </p>
           <p className="text-lg mt-4">
-            Cada curso incluye materiales de apoyo, acceso a instructores calificados, y certificación al finalizar. 
-            ¡No pierdas la oportunidad de crecer y aprender con nosotros!
+          Total mente satisfechos, te capacitare para que puedas elaborar planes alimenticios y puedas ofrecer en tu negocio un tratamiento totalmente completo, veremos ejemplos de casos distintos de pacientes, les proporcionaré lista de proveedores de alta, media y baja gama de aparatología Profesional e insumos de spa, te enseñaré a crear tus productos para trabajar tu negocio y te aportaremos estrategias para logres llenar tu spa y logres tener ingresos increíbles, al terminar este curso te daremos 5 certificaciones avaladas por secretaria del trabajo y previsión social,  No puedes desaprovechar esta oportunidad!
           </p>
         </div>
       </div>

@@ -8,8 +8,7 @@ const Header = () => {
       {/* Barra superior con información de contacto y redes sociales */}
       <div className="top-bar flex flex-col md:flex-row items-center md:items-start justify-between bg-[#dfd299] p-2 text-[#cbaa3d]">
       <div className="contact-info flex flex-col md:flex-row items-center text-center md:text-left space-y-2 md:space-y-0 md:space-x-4">
-        <span><i className="fas fa-envelope"></i> cursos@silluet.com</span>
-        <span><i className="fas fa-phone"></i> (654) 321-7654</span>
+        <span><i className="fas fa-envelope"></i> cursos@siluetteplusjc.com</span>
         <span><i className="fas fa-map-marker-alt"></i> Dirección Col. Villa Jardin, Calle. Flor De Durazno #1011</span>
         <span><i className="fas fa-map-marker-alt"></i> Teléfono 871 333 0566</span>
       </div>
