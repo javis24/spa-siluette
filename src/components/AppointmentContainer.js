@@ -20,7 +20,7 @@ const AppointmentContainer = () => {
                 </div>    
             {/* Imagen de Horario */}
             <div
-            className="open-hours bg-contain bg-center text-gray-900 p-10 text-center"  style={{ backgroundImage: "url('/img/cursos.jpeg')", backgroundRepeat: "no-repeat" }} >
+            className="open-hours bg-contain bg-center text-gray-900 p-10 text-center"  style={{ backgroundImage: "url('/img/cursos.jpg')", backgroundRepeat: "no-repeat" }} >
               {/* Puedes agregar contenido dentro de esta sección si es necesario */}
             </div>
           </div>
